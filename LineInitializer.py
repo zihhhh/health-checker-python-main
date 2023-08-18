@@ -4,8 +4,8 @@ import os, sys
 # get channel_secret and channel_access_token from your environment variable
 channel_secret = os.getenv('LINE_CHANNEL_SECRET', None)
 channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
-
-line_bot_api = str(LineBotApi(channel_access_token))
+channel_access_token=str(channel_access_token)
+line_bot_api = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
 
 if channel_secret is None:
